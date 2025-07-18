@@ -16,7 +16,7 @@ A sleek and responsive personal portfolio built with **React** and **Vite** to s
 - 🧠 Skills section with categorized icons
 - 💼 Projects with images, tags, and live/demo links
 - 📚 Education and work experience timeline
-- 📞 Contact form with email integration (if available)
+- 📞 Contact form with email integration.
 
 ---
 
