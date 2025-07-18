@@ -39,7 +39,7 @@ const Footer = () => {
           {[
             { icon: <FaFacebook /> },
             { icon: <FaTwitter /> },
-            { icon: <FaLinkedin, link:"https://www.linkedin.com/in/jitin-nailwal-4bb85b227/" /> },
+            { icon: <FaLinkedin />, link:"https://www.linkedin.com/in/jitin-nailwal-4bb85b227/" },
             { icon: <FaInstagram /> },
             { icon: <FaYoutube /> },
           ].map((item, index) =>
