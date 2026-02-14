@@ -40,7 +40,7 @@ import IITMlogo from './assets/education_logo/IITMlogo.jpg'
 import sarvodyavidyalya from './assets/education_logo/sarvodayavidyalya.png'
 
 // Project Section Logo's
-import jobportalimg from './assets/work_logo/jobportalimg.png';
+import ravionaiimg from './assets/work_logo/ravionaiimg.png';
 import blogappimg from './assets/work_logo/blogappimg.png'
 import personalportfolio from './assets/work_logo/personalportfolioimg.png';
 
@@ -146,17 +146,17 @@ export const projects = [
     image: personalportfolio,
     tags: ["React JS", "TailwindCss", "HTML", "JavaScript"],
     github: "https://github.com/jitinnailwal/personal-portfolio-website",
-    webapp: "",
+    webapp: "https://personal-portfolio-website-jitin-nailwal.vercel.app/",
   },
   {
     id: 1,
-    title: "Job Portal",
+    title: "Ravion AI",
     description:
-      "A modern and user-friendly job portal that connects job seekers with potential employers. It features job listings, company profiles, application tracking, and filters to help users find relevant opportunities quickly and efficiently.",
-    image: jobportalimg,
-    tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
-    github: "https://github.com/jitinnailwal/job-portal",
-    // webapp: "https://",
+      "A full-stack AI application featuring conversational AI powered by Google Gemini 2.0 Flash, AI image generation via ImageKit, a community gallery for sharing creations, Firebase authentication with Google OAuth, a credit-based economy, chat management, and dark mode support.",
+    image: ravionaiimg,
+    tags: ["React JS", "Node.js", "Express", "MongoDB", "TailwindCss", "Firebase", "Gemini API"],
+    github: "https://github.com/jitinnailwal/RavionAi",
+    webapp: "https://ravionai-client.vercel.app/",
   },
   {
     id: 2,
