@@ -68,9 +68,15 @@ const Work = () => {
 
       {/* Modal Container */}
       {selectedProject && (
-        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4'>
-          <div className='bg-gray-900 rounded-xl shadow-2xl w-full max-w-[700px] mx-auto overflow-hidden relative'>
-            <div className='flex justify-end pt-2 pr-4'>
+        <div
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4'
+          onClick={handleCloseModal}
+        >
+          <div
+            className='bg-gray-900 rounded-xl shadow-2xl w-full max-w-[700px] max-h-[90vh] mx-auto overflow-y-auto relative'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className='sticky top-0 z-10 flex justify-end pt-2 pr-4 bg-gray-900'>
               <button
                 onClick={handleCloseModal}
                 className='text-white text-3xl font-bold hover:text-purple-500'
@@ -84,18 +90,18 @@ const Work = () => {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className='w-[95%] object-contain rounded-xl shadow-2xl'
+                  className='w-[95%] max-h-[40vh] object-contain rounded-xl shadow-2xl'
                 />
               </div>
 
-              <div className='lg:p-8 p-6'>
-                <h3 className='lg:text-3xl font-bold text-white mb-4 text-md'>
+              <div className='lg:p-8 p-4'>
+                <h3 className='lg:text-3xl font-bold text-white mb-3 text-lg'>
                   {selectedProject.title}
                 </h3>
 
-                <p className='lg:text-base text-xs text-gray-400 mb-6'>{selectedProject.description}</p>
+                <p className='lg:text-base text-sm text-gray-400 mb-4'>{selectedProject.description}</p>
 
-                <div className='flex flex-wrap gap-2 mb-6'>
+                <div className='flex flex-wrap gap-2 mb-4'>
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -111,7 +117,7 @@ const Work = () => {
                     href={selectedProject.github}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 
+                    className='w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1
                     rounded-xl lg:text-xl text-sm font-semibold text-center'
                   >
                     View Code
@@ -121,7 +127,7 @@ const Work = () => {
                     href={selectedProject.webapp}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl 
+                    className='w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl
                     text-sm font-semibold text-center'
                   >
                     View Live
