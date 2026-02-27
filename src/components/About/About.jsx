@@ -1,6 +1,7 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from 'react-parallax-tilt';
+import { motion } from "framer-motion";
 import profileImage from "../../assets/profile.png";
 
 const About = () => {
@@ -10,7 +11,13 @@ const About = () => {
       className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-8 md:mt-10 lg:mt-18"
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+        <motion.div
+          className="md:w-1/2 text-center md:text-left mt-8 md:mt-0"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
             Hi, I am
           </h1>
@@ -57,9 +64,15 @@ const About = () => {
             }}>
             DOWNLOAD CV
           </a>
-        </div>
+        </motion.div>
         {/* Right Side Of About Section */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
+        <motion.div
+          className="md:w-1/2 flex justify-center md:justify-end"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
 
         <Tilt
         className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full"
@@ -76,7 +89,7 @@ const About = () => {
             className="w-full h-full rounded-full object-cover drop-shadow-[0_10px-20px_rgba(130,69,236,0.5)]" />
 
         </Tilt>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { education } from '../../constants'
+import { motion } from 'framer-motion'
 
 const Education = () => {
   return (
@@ -8,13 +9,19 @@ const Education = () => {
       className="py-24 pb-24 px-[5vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
           My education has been a journey of learning and development. Here are the details of my academic background
         </p>
-      </div>
+      </motion.div>
 
       {/* Education Timeline */}
       <div className="relative pl-8 sm:pl-0">
@@ -23,16 +30,20 @@ const Education = () => {
 
         {/* Education Info */}
         {education.map((edu, index) => (
-          <div
+          <motion.div
             key={edu.id}
             className={`flex flex-col sm:flex-row items-center mb-16 ${
               index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
             }`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
           >
 
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
                 index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
               } sm:ml-44 sm:mr-44 ml-4 transform transition-transform duration-300 hover:scale-105`}
             >
@@ -65,7 +76,7 @@ const Education = () => {
               <p className="mt-4 text-gray-400 font-bold">Grade: {edu.grade}</p>
               <p className="mt-4 text-gray-400">{edu.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
