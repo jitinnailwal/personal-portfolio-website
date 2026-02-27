@@ -42,6 +42,7 @@ import sarvodyavidyalya from './assets/education_logo/sarvodayavidyalya.png'
 // Project Section Logo's
 import ravionaiimg from './assets/work_logo/ravionaiimg.png';
 import blogappimg from './assets/work_logo/blogappimg.png'
+import airesumeimg from './assets/work_logo/ai_resume.png'
 import personalportfolio from './assets/work_logo/personalportfolioimg.png';
 
 
@@ -160,13 +161,13 @@ export const projects = [
   },
   {
     id: 2,
-    title: "J-Blog WebApp",
+    title: "AI Resume Screening",
     description:
-      "A full-featured blog application that allows users to create, edit, and delete blog posts. It supports user authentication, categories, comments, and responsive design, enabling smooth content management and seamless reading experience across devices.",
-    image: blogappimg,
-    tags: ["React JS", "TailwindCss", "HTML", "JavaScript"],
-    github: "https://github.com/jitinnailwal/J-blog-app",
-    // webapp: "https:///",
+      "An AI-powered resume screening application that intelligently analyzes and evaluates resumes, helping streamline the hiring process by automatically assessing candidate qualifications, skills, and experience to find the best-fit candidates efficiently.",
+    image: airesumeimg,
+    tags: ["React JS", "Node.js", "Express", "MongoDB", "TailwindCss", "JavaScript"],
+    github: "https://github.com/jitinnailwal/ai-resume-screening",
+    webapp: "https://ai-resume-client-one.vercel.app/",
   },
 
 ];  
