@@ -7,13 +7,14 @@ const BlurBlob = ({position, size}) => {
   const {top, left} = position;
   const {width, height} = size;
   return (
-    <div className='absolute' 
+    <div className='absolute overflow-hidden pointer-events-none'
     style={{
       top: top,
       left: left,
       width: width,
       height: height,
       transform: 'translate(-50%, -50%)',
+      maxWidth: '100vw',
   }}>
 
       <div className='w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob'></div>

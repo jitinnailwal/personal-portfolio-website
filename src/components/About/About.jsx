@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
 import profileImage from "../../assets/profile.png";
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-8 md:mt-10 lg:mt-18"
+      className="py-4 px-[5vw] md:px-[7vw] lg:px-[20vw] font-sans mt-4 sm:mt-8 md:mt-10 lg:mt-18"
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         <motion.div
@@ -46,7 +53,7 @@ const About = () => {
             </span>
           </h3>
 
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-10 mt-4 sm:mt-8 leading-relaxed">
             I am a passionate Full Stack Developer with a keen interest in
             building scalable web applications and exploring new technologies.
             With a strong foundation in both front-end and back-end development,
@@ -57,7 +64,7 @@ const About = () => {
           <a href="https://drive.google.com/file/d/1RY1jXhWJAkMn9iVORkTBWE0Tl-1k_XjW/view?usp=drive_link"
             target='_blank'
             rel='noopener noreferrer'
-            className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300 transform hover:scale-105"
+            className="inline-block text-white py-2.5 px-6 sm:py-3 sm:px-8 rounded-full mt-3 sm:mt-5 text-base sm:text-lg font-bold transition duration-300 transform hover:scale-105"
             style={{
               background: 'linear-gradient(90deg, #8245ec, #a855f7)',
               boxShadow: '0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec',
@@ -68,21 +75,21 @@ const About = () => {
         {/* Right Side Of About Section */}
         <motion.div
           className="md:w-1/2 flex justify-center md:justify-end"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
 
         <Tilt
-        className="w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full"
-        tiltMaxAngleX={20}
-        tiltMaxAngleY={20}
-        perspective = {1000}
-        scale={1.05}
+        className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[26rem] lg:h-[26rem] border-4 border-purple-700 rounded-full"
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        perspective={1000}
+        scale={1.02}
         transitionSpeed={1000}
-        gyroscope ={true}
-
+        gyroscope={false}
+        tiltEnable={!isMobile}
         >
 
           <img src={profileImage} alt="Jitin Nailwal"

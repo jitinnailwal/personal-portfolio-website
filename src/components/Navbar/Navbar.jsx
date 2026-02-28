@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,45 +106,53 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[rgba(5,4,20,0.6)] backdrop-blur-md shadow-lg z-50 rounded-lg md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
-            {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className={`hover:text-white transition-colors ${
-                  activeSection === item.id ? 'text-[#8245ec]' : ''
-                }`}
-              >
-                <button
-                  onClick={() => handleMenuItemClick(item.id)}
-                  className="cursor-pointer"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="absolute top-16 left-1/2 -translate-x-1/2 w-[90%] bg-[rgba(5,4,20,0.85)] backdrop-blur-lg shadow-lg z-50 rounded-xl md:hidden border border-gray-800"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ul className="flex flex-col items-center space-y-3 py-5 text-gray-300">
+              {menuItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={`hover:text-white transition-colors ${
+                    activeSection === item.id ? 'text-[#8245ec]' : ''
+                  }`}
                 >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/jitinnailwal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#8245ec]"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/jitin-nailwal-4bb85b227/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[#8245ec]"
-              >
-                <FaLinkedin size={24} />
-              </a>
-            </div>
-          </ul>
-        </div>
-      )}
+                  <button
+                    onClick={() => handleMenuItemClick(item.id)}
+                    className="cursor-pointer text-base py-1"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+              <div className="flex space-x-5 pt-2">
+                <a
+                  href="https://github.com/jitinnailwal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-[#8245ec]"
+                >
+                  <FaGithub size={22} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jitin-nailwal-4bb85b227/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-[#8245ec]"
+                >
+                  <FaLinkedin size={22} />
+                </a>
+              </div>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -10,47 +10,47 @@ const Education = () => {
     >
       {/* Section Title */}
       <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 50 }}
+        className="text-center mb-10 sm:mb-16"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
       >
-        <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
+        <p className="text-gray-400 mt-4 text-sm sm:text-base md:text-lg font-semibold">
           My education has been a journey of learning and development. Here are the details of my academic background
         </p>
       </motion.div>
 
       {/* Education Timeline */}
-      <div className="relative pl-8 sm:pl-0">
+      <div className="relative pl-10 sm:pl-0">
         {/* Vertical line */}
-        <div className="absolute left-3 sm:left-1/2 sm:-translate-x-1/2 w-1 bg-white h-full"></div>
+        <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-0.5 sm:w-1 bg-white h-full"></div>
 
         {/* Education Info */}
         {education.map((edu, index) => (
           <motion.div
             key={edu.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${
+            className={`flex flex-col sm:flex-row items-center mb-10 sm:mb-16 ${
               index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
             }`}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
           >
 
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+              className={`w-full sm:max-w-md p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
                 index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-4 transform transition-transform duration-300 hover:scale-105`}
+              } sm:ml-44 sm:mr-44 ml-2 transform transition-transform duration-300 hover:scale-[1.03]`}
             >
               {/* Flex container for image and text */}
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center gap-3 sm:gap-4 md:space-x-6">
                 {/* School Logo/Image */}
-                <div className="w-24 h-16 bg-white rounded-md overflow-hidden">
+                <div className="w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 bg-white rounded-md overflow-hidden shrink-0">
                   <img
                     src={edu.img}
                     alt={edu.school}
@@ -59,22 +59,22 @@ const Education = () => {
                 </div>
 
                 {/* Degree, School Name, and Date */}
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-between min-w-0">
                   <div>
-                    <h3 className="text-xl sm:text-xl font-semibold text-white">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white leading-snug">
                       {edu.degree}
                     </h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">
+                    <h4 className="text-xs sm:text-sm text-gray-300 truncate">
                       {edu.school}
                     </h4>
                   </div>
                   {/* Date at the bottom */}
-                  <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">{edu.date}</p>
                 </div>
               </div>
 
-              <p className="mt-4 text-gray-400 font-bold">Grade: {edu.grade}</p>
-              <p className="mt-4 text-gray-400">{edu.desc}</p>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-400 font-bold">Grade: {edu.grade}</p>
+              <p className="mt-2 sm:mt-4 text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">{edu.desc}</p>
             </div>
           </motion.div>
         ))}

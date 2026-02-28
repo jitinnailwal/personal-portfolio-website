@@ -10,40 +10,40 @@ const Experience = () => {
 
     >
       <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 50 }}
+        className="text-center mb-10 sm:mb-16"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
       >
-        <h2 className='text-4xl font-bold text-white'>Experience</h2>
+        <h2 className='text-3xl sm:text-4xl font-bold text-white'>Experience</h2>
         <div className='w-32 h-1 bg-purple-500 mx-auto mt-4'></div>
-        <p className="text-gray-400 text-center text-lg font-medium max-w-3xl mx-auto mt-2">
+        <p className="text-gray-400 text-center text-sm sm:text-base md:text-lg font-medium max-w-3xl mx-auto mt-2">
           While I am currently at the beginning of my professional journey, I have been actively sharpening my skills through self-learning, building personal projects, and contributing to open-source code. I'm now seeking opportunities where I can apply my knowledge, grow under mentorship, and make meaningful contributions to real-world applications.
         </p>
       </motion.div>
 
-      <div className='relative pl-8 sm:pl-0'>
+      <div className='relative pl-10 sm:pl-0'>
         {/* Vertical Line */}
-        <div className='absolute left-3 sm:left-1/2 sm:-translate-x-1/2 w-1 bg-white h-full'></div>
+        <div className='absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-0.5 sm:w-1 bg-white h-full'></div>
 
         {experiences.length === 0 ? (
           <motion.div
             className="relative text-center text-gray-300 mt-8"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
           >
             {/* Timeline Circle */}
-            <div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <span className="text-sm sm:text-base text-white font-semibold">🕒</span>
+            <div className="absolute left-0 sm:left-1/2 -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-10 h-10 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
+              <span className="text-xs sm:text-base text-white font-semibold">🕒</span>
             </div>
 
             {/* Message Box */}
-            <div className="w-full sm:max-w-md mx-auto p-6 mt-20 ml-4 sm:ml-auto sm:mr-auto rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]">
-              <h3 className="text-xl font-bold text-white">No Experience Yet</h3>
-              <p className="text-gray-400 mt-2">
+            <div className="w-full sm:max-w-md mx-auto p-4 sm:p-6 mt-16 sm:mt-20 ml-2 sm:ml-auto sm:mr-auto rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]">
+              <h3 className="text-lg sm:text-xl font-bold text-white">No Experience Yet</h3>
+              <p className="text-sm sm:text-base text-gray-400 mt-2">
                 I'm currently building skills and working on projects. Stay tuned for future updates!
               </p>
             </div>
@@ -52,14 +52,14 @@ const Experience = () => {
           experiences.map((experience, index) => (
             <motion.div
               key={experience.id}
-              className={`flex flex-col sm:flex-row items-center mb-16 ${index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"}`}
-              initial={{ opacity: 0, y: 50 }}
+              className={`flex flex-col sm:flex-row items-center mb-10 sm:mb-16 ${index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"}`}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               {/* Timeline Circle */}
-              <div className="absolute left-0 sm:left-1/2 -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-8 h-8 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
+              <div className="absolute left-0 sm:left-1/2 -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-8 h-8 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex justify-center items-center z-10">
                 <img
                   src={experience.img}
                   alt={experience.company}
@@ -69,9 +69,9 @@ const Experience = () => {
 
               {/* Content Section */}
               <div
-                className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+                className={`w-full sm:max-w-md p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-700 bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
                   index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-                } sm:ml-44 sm:mr-44 ml-4 transform transition-transform duration-300 hover:scale-105`}
+                } sm:ml-44 sm:mr-44 ml-2 transform transition-transform duration-300 hover:scale-[1.03]`}
               >
                 <div className="flex items-center space-x-6">
                   <div className="w-16 h-16 bg-white rounded-md overflow-hidden">

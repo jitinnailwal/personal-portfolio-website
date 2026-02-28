@@ -65,15 +65,15 @@ const Contact = () => {
       <ToastContainer />
 
       <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 50 }}
+        className="text-center mb-10 sm:mb-16"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
       >
-        <h2 className="text-4xl font-bold text-white">CONTACT</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">CONTACT</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
+        <p className="text-gray-400 mt-4 text-sm sm:text-base md:text-lg font-semibold">
           Feel free to reach out for collaborations, questions, or opportunities. I'm always open to connecting and creating together.
         </p>
       </motion.div>
@@ -81,11 +81,11 @@ const Contact = () => {
       {/*Contact Form */}
 
       <motion.div
-        className='mt-8 w-full max-w-md bg-[#0d081f] p-6 rounded-lg shadow-lg border border-gray-700'
-        initial={{ opacity: 0, y: 50 }}
+        className='mt-4 sm:mt-8 w-full max-w-sm sm:max-w-md bg-[#0d081f] p-4 sm:p-6 rounded-lg shadow-lg border border-gray-700'
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
         <h3 className='text-xl font-semibold text-white text-center'>
           Connect With Me
