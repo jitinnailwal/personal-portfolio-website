@@ -43,7 +43,7 @@ import sarvodyavidyalya from './assets/education_logo/sarvodayavidyalya.png'
 import ravionaiimg from './assets/work_logo/ravionaiimg.png';
 import blogappimg from './assets/work_logo/blogappimg.png'
 import airesumeimg from './assets/work_logo/ai_resume.png'
-import personalportfolio from './assets/work_logo/personalportfolioimg.png';
+import askifyimg from './assets/work_logo/askify.png';
 
 
 
@@ -141,13 +141,13 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "Personal Portfolio App",
+    title: "Askify",
     description:
-    "A responsive personal portfolio website showcasing my skills, projects, experience, and education — designed to highlight my professional journey and attract potential employers or collaborators.",
-    image: personalportfolio,
-    tags: ["React JS", "TailwindCss", "HTML", "JavaScript"],
-    github: "https://github.com/jitinnailwal/personal-portfolio-website",
-    webapp: "https://personal-portfolio-website-jitin-nailwal.vercel.app/",
+      "An AI-powered document Q&A application built as a RAG (Retrieval-Augmented Generation) agent that lets users upload documents and ask intelligent questions about their content, delivering accurate and context-aware answers.",
+    image: askifyimg,
+    tags: ["Next.js", "TypeScript", "RAG", "AI"],
+    github: "https://github.com/jitinnailwal/Askify",
+    webapp: "https://askify-app.vercel.app",
   },
   {
     id: 1,
